@@ -1,9 +1,7 @@
 #include <stdio.h>
 
-int main() {
-    
-   // declaracao de variáveis
-
+// declaracao de variáveis
+int main(){
 char estado[20];
 char codigo[5];
 char nome[20];
@@ -11,6 +9,8 @@ int populacao;
 float area;
 float pib;
 int npt;
+float densipop1;
+float pibc1;
 
 char estado2[20];
 char codigo2[5];
@@ -19,6 +19,8 @@ int populacao2;
 float area2;
 float pib2;
 int npt2;
+float densipop2;
+float pibc2;
 
 //insercao de dados
 
@@ -44,6 +46,10 @@ scanf("%f", &pib);
 printf("Digite o números de pontos turísticos: ");
 scanf("%d", &npt);
 
+densipop1 =(float) populacao / area;
+pibc1 = (float)pib / populacao;
+
+printf("\n");
 
 printf("Digite os valores da segunda carta \n");
 printf("Digite o estado: ");
@@ -67,15 +73,22 @@ scanf("%f", &pib2);
 printf("Digite o números de pontos turísticos: ");
 scanf("%d", &npt2);
 
+densipop2 = (float) populacao2 / area2;
+pibc2 = (float) pib2 / populacao2;
+
 //impressão dos valores
 printf("############################ \n");
-printf("A primeira carta é \n");
-printf("Estado: %s \n Código da carta: %s \n Nome da cidade: %s \n População: %d \n", estado, codigo, nome);
-printf("Area em Km²: %f \n PIB: %f \n Números de pontos turísticos: %d \n", area, pib, npt);
+printf("Carta 1 \n");
+printf("Estado: %s \n Código: %s \n Nome da Cidade: %s \n População: %d \n", estado, codigo, nome);
+printf("Area: %f Km² \n PIB: %f \n Números de pontos turísticos: %d \n", area, pib, npt);
+printf("Densidade Populacional: %.2f hab/Km² \n PIB per Capita: %.2f reais \n", densipop1, pibc1);
+printf("\n");
 
 printf("############################\n ");
-printf("A segunda carta é \n");
-printf("Estado: %s \n Código da carta: %s \n Nome da cidade: %s \n População: %d \n", estado2, codigo2, nome2);
-printf("Area em Km²: %f \n PIB: %f \n Números de pontos turísticos: %d \n", area2, pib2, npt2);
+printf("Carta 2\n");
+printf("Estado: %s \n Código: %s \n Nome da Cidade: %s \n População: %d \n", estado2, codigo2, nome2);
+printf("Area: %f Km² \n PIB: %f \n Números de pontos turísticos: %d \n", area2, pib2, npt2);
+printf("Densidade Populacional: %.2f hab/Km² \n PIB per Capita: %.2f reais \n", densipop2, pibc2);
+printf("\n");
 
 }
